@@ -157,8 +157,24 @@ else:
 #plt.plot(eval_mesh,true_vals[:,0],'r--')
 #plt.show()
 
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Plot prediction (and true solution if available)
+#print('\n  [ Creating Animation ]\n')
 fig, ax = plt.subplots()
 
 line1, = ax.plot(eval_mesh, soln_vals[:,0])
@@ -172,38 +188,42 @@ else:
     
 ax.set_ylim([np.min(soln_vals),np.max(soln_vals)])
 
-#ttl = ax.text(.5, 1.05, '', transform = ax.transAxes, va='center')
-#soln_title = 'Approximate Solution at t = %0.2f' %(times[0])
-soln_title = 'Approximate Solution'
-ax.set_title(soln_title)
-plt.xlabel('x - axis')
-plt.ylabel('y - axis')
+
+# Define title/label
+soln_title = 't = %0.2f' %(times[0])
+
+from_left = 0.85
+from_bottom = 0.875
+title = ax.text(from_left,from_bottom, "", bbox={'facecolor':'w', 'alpha':0.5, 'pad':5},
+                fontsize=20, transform=ax.transAxes, ha="center")
+plt.xlabel('x - axis', fontsize=20)
+plt.ylabel('y - axis', fontsize=20)
 
 
-# Init only required for blitting to give a clean slate.
+
 def init():
     line1.set_ydata(np.ma.array(eval_mesh, mask=True))
     line2.set_ydata(np.ma.array(eval_mesh, mask=True))
-    soln_title = 'Approximate Solution at t = %0.2f' %(times[0])
-    #ttl.set_text(soln_title)
-    #return line1, ttl
-    return line1, line2
+    return line1, line2, title,
 
 def animate(i):
-    line1.set_ydata(soln_vals[:,i])  # update the data
+    line1.set_ydata(soln_vals[:,i])
     try:
         true_solution
     except:
-        line2.set_ydata(soln_vals[:,i])  # update the data
+        line2.set_ydata(soln_vals[:,i])
     else:
-        line2.set_ydata(true_vals[:,i])  # update the data
-    soln_title = 'Approximate Solution at t = %0.2f' %(times[i])
-    #ttl.set_text(soln_title)
-    #return line1, ttl
-    return line1, line2
+        line2.set_ydata(true_vals[:,i])
+    soln_title = 't = %0.2f' %(times[i])
+    title.set_text(soln_title)
 
-#animation_delay = int(np.floor(10 + 190*np.exp(-0.01*(t_steps-10))))
-animation_delay = int(np.floor(-190.0/9990.0*(t_steps-10.0))) + 200.0
+    return line1, line2, title,
+
+animation_delay = int(np.max([np.floor(-190.0/990.0*(t_steps-10.0)) + 200.0, 20.0]))
 ani = animation.FuncAnimation(fig, animate, np.arange(1, t_steps), init_func=init,
                               interval=animation_delay, blit=True)
 plt.show()
+
+print('  [ Saving Animation ]\n\n')
+filename = 'animation.mp4'
+ani.save(filename, writer=None, fps=None, dpi=None, codec=None, bitrate=None)
