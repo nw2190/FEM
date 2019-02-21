@@ -10,22 +10,22 @@ This code is designed to illustrate a collection of fundamental methods/techniqu
 
 The finite element space basis functions which are implemented in this code are:
 
-* linear basis functions - `linear_basis` and
-* quadratic basis functions - `quadratic_basis`
+* `linear_basis` - linear basis functions
+* `quadratic_basis` - quadratic basis functions
 
 The desired set of basis functions can be specified by setting the `basis` variable in the `model.py` file.
 
 There are also two choices of solver methods available:
 
-* Solve using a Cholesky factorization and triangular inversion - `Cholesky`
-* Solve using the conjugate gradient method - `Conjugate Gradient`
+* `Cholesky` - Solve using a Cholesky factorization and triangular inversion
+* `Conjugate Gradient` - Solve using the conjugate gradient method 
 
 which can specified by the `solve_method` variable.
 
 Moreover, there are two time-stepping schemes:
 
-* The implicit backward Euler scheme - `Backward Euler`
-* The Crank-Nicolson / Theta=0.5 scheme - `Crank-Nicolson`
+* `Backward Euler` - The implicit backward Euler scheme 
+* `Crank-Nicolson` - The Crank-Nicolson / Theta=0.5 scheme
 
 which can be specified by the `time_stepping` variable.
 
