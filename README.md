@@ -5,6 +5,14 @@ This code provides a simple, pedagogical implementation of the finite element me
 This code is designed to illustrate a collection of fundamental methods/techniques for solving PDEs using the finite element method.  It is recommended that a more high-performance computing platform such as [FEniCS](https://fenicsproject.org/) is used for real applications of the finite element method.  Setting up and solving partial differential equations in FEniCS is extremely straight-forward and much more numerically stable than the more pedagogical code provided in this repository.
 
 
+
+## Settings
+
+The finite element space basis functions which are implemented in this code are `linear_basis` and `quadratic_basis`; the desired set of basis functions can be specified by setting the `basis` variable in the `model.py` file.
+
+There are also two choices of solver methods available,  `Cholesky` and `Conjugate Gradient`, which can be specified by the `solve_method` variable, and two time-stepping schemes, `Backward Euler` and `Crank-Nicolson`, which can be specified by the `time_stepping` variable.
+
+
 ## Running the Code
 The code can be run by simply issuing the command:
 
@@ -52,8 +60,3 @@ This code will also generate and save an animation for the computed solution:
 <p align="center"><img src="figures/Shaped_Signal.gif" alt="Animation of example solution" style="margin-top: 25px; width: 90%; height: auto; max-width: 700px ! important;"></p> 
 
 
-## Settings
-
-The finite element space basis functions which are implemented in this code are `linear_basis` and `quadratic_basis`; the desired set of basis functions can be specified by setting the `basis` variable in the `model.py` file.
-
-There are also two choices of solver methods available,  `Cholesky` and `Conjugate Gradient`, which can be specified by the `solve_method` variable, and two time-stepping schemes, `Backward Euler` and `Crank-Nicolson`, which can be specified by the `time_stepping` variable.
