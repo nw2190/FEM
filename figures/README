@@ -1,0 +1,5 @@
+Animation can be generated using the command:
+mkdir framesl; ffmpeg -i video.mp4  -r 5 'frames/frame-%03d.jpg'
+
+Followed by the command:
+cd frames; convert -delay 20 -loop 0 *.jpg myimage.gif
