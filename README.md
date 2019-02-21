@@ -74,6 +74,6 @@ user@host $ python model.py
 
 This code will also generate and save an animation for the computed solution:
 
-<p align="center"><img src="figures/Shaped_Signal.gif" alt="Animation of example solution" style="margin-top: 25px; width: 90%; height: auto; max-width: 700px ! important;"></p> 
+<p align="center"><img src="figures/Shaped_Signal.gif" alt="Animation of example solution" style="margin-top: 25px; width: 75%; height: auto; max-width: 700px ! important;"></p> 
 
 
