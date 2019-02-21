@@ -7,4 +7,4 @@ Finite element solver for parabolic PDEs.
 This code is designed to illustrate a collection of fundamental methods/techniques for solving PDEs using the finite element method.
 
 
-<p><img src="figures/Shaped_Signal.gif" alt="Animation of example solution" style="margin-top: 25px; width: 90%; height: auto;"></p> 
+<p align="center"><img src="figures/Shaped_Signal.gif" alt="Animation of example solution" style="margin-top: 25px; width: 90%; height: auto;"></p> 
