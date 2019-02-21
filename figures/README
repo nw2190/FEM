@@ -1,5 +1,8 @@
 Animation can be generated using the command:
-mkdir frames; ffmpeg -i animation.mp4  -r 10 'frames/frame-%03d.jpg'
+rm -rf frames; mkdir frames; ffmpeg -i animation.mp4  -r 6  -q:v 1 'frames/frame-%03d.jpg'
 
 Followed by the command:
-cd frames; convert -delay 10 -loop 0 *.jpg Shaped_Signal.gif
+cd frames; convert -delay 17 -loop 0 *.jpg Shaped_Signal.gif
+
+The GIF file can then be viewed using:
+animate Shaped_Signal.gif
