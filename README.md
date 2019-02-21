@@ -11,9 +11,8 @@ The code can be run by simply issuing the command:
 ```console
 user@host $ python model.py
 
-                                                                                                                                         
--------------------------                                                                                                                
- Finite Element Space:  |                                                                                                                
+-------------------------
+ Finite Element Space:  | 
 -------------------------
 
   - Spatial Domain = [0.00, 1.00]
@@ -44,6 +43,7 @@ user@host $ python model.py
 
 
   [ Saving Animation ]
+
 
 ```
 
